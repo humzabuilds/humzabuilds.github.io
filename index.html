@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>humzabuilds</title>
+<meta name="description" content="Free Claude skills. One new one every week.">
+<meta name="theme-color" content="#08080a">
+<meta property="og:title" content="humzabuilds">
+<meta property="og:description" content="Free Claude skills. One new one every week.">
+<meta property="og:image" content="avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08080a; --card:#121216; --card2:#17171c; --line:#26262e; --text:#f4f4f6; --dim:#9a9aa6;
+    --acc:#ff7a2f; --acc2:#ffb27a; --glow:rgba(255,122,47,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden;
+    background-image:radial-gradient(900px 520px at 50% -140px,rgba(255,122,47,.20),transparent 70%),radial-gradient(600px 400px at 100% 100%,rgba(255,122,47,.06),transparent 70%)}
+  body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>")}
+  .wrap{max-width:460px;margin:0 auto;padding:44px 16px 56px}
+  .me{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .av{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid var(--acc);box-shadow:0 0 0 6px rgba(255,122,47,.12),0 0 40px var(--glow)}
+  .handle{margin-top:14px;font-weight:800;font-size:17px;letter-spacing:-.01em}
+  .handle span{color:var(--dim);font-weight:600}
+  h1{margin-top:22px;font-weight:900;font-size:40px;line-height:1.02;letter-spacing:-.035em}
+  .hl{display:inline-block;margin-top:8px;background:var(--acc);color:#fff;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+    font-size:40px;letter-spacing:0;padding:0 14px 2px;border-radius:10px;box-shadow:0 10px 40px var(--glow)}
+  .sub{margin-top:16px;color:var(--dim);font-size:15.5px;line-height:1.5;font-weight:500;max-width:360px}
+  .sub em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--acc2);font-size:18px}
+  .steps{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 8px;text-align:center}
+  .step b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#fff;font-size:12px;font-weight:800}
+  .step p{margin-top:7px;font-size:12.5px;line-height:1.3;font-weight:600}
+  .label{margin:34px 0 12px;display:flex;justify-content:center}
+  .pill{background:var(--acc);color:#fff;font-weight:800;font-size:12.5px;padding:6px 12px;border-radius:7px;box-shadow:0 6px 22px var(--glow)}
+  .win{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .win:hover{border-color:rgba(255,122,47,.55);box-shadow:0 0 0 1px rgba(255,122,47,.25),0 14px 40px rgba(0,0,0,.5)}
+  .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+  .bar i{width:9px;height:9px;border-radius:50%;background:#3a3a44}
+  .bar i:nth-child(1){background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+  .bar span{margin-left:8px;font-size:11.5px;color:var(--dim);font-weight:600;font-family:ui-monospace,Menlo,monospace}
+  .body{padding:16px 16px 16px}
+  .name{font-weight:800;font-size:19px;letter-spacing:-.02em}
+  .name em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--acc);font-size:22px}
+  .desc{margin-top:6px;color:var(--dim);font-size:14.5px;line-height:1.45;font-weight:500}
+  .get{margin-top:14px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;border:0;cursor:pointer;
+    background:#fff;color:#0b0b0d;border-radius:12px;padding:13px 14px;font:800 15px Inter,sans-serif;letter-spacing:-.01em;transition:transform .12s ease}
+  .get:active{transform:scale(.98)}
+  .get .word{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;font-weight:700;background:#0b0b0d;color:var(--acc2);padding:5px 9px;border-radius:7px}
+  .foot{margin-top:30px;text-align:center;color:var(--dim);font-size:13px;line-height:1.55}
+  .foot a{color:var(--text);text-decoration:none;font-weight:700}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,calc(100% + 60px));opacity:0;visibility:hidden;background:#fff;color:#0b0b0d;padding:13px 16px;border-radius:12px;
+    font-weight:700;font-size:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);transition:transform .25s ease,opacity .25s ease;max-width:calc(100% - 32px);text-align:center;z-index:5}
+  .toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+  .toast b{color:var(--acc)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="me">
+    <img class="av" src="avatar.jpg" alt="Humza">
+    <div class="handle">@humzabuilds <span>on Instagram</span></div>
+    <h1>Claude skills,<br><span class="hl">free every week</span></h1>
+    <p class="sub">The exact skills from my videos. Tap one, send me the word, and it lands in your DMs. <em>No catch.</em></p>
+  </section>
+
+  <div class="steps" aria-label="How it works">
+    <div class="step"><b>1</b><p>Tap a skill</p></div>
+    <div class="step"><b>2</b><p>Paste the word in my DMs</p></div>
+    <div class="step"><b>3</b><p>Get the download</p></div>
+  </div>
+
+  <div class="label"><span class="pill">The skills</span></div>
+  <div id="list"></div>
+
+  <p class="foot">Works in the Claude app, claude.ai and Claude Code.<br>New one every week. <a href="https://instagram.com/humzabuilds">Follow so you don't miss it</a></p>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // Each button copies its word and opens Humza's Instagram DMs; the DM bot (skill_dm.py, dm_word) takes it from there.
+  const SKILLS = [
+    {file:"reverse-engineer.md", name:'Reverse Engineer <em>Anything</em>', desc:"Pick one feature of an app you like and rebuild your own version of it. The real repo plus the exact prompt I used.", word:"REA"},
+    {file:"video-editor.md", name:'Video <em>editor</em>', desc:"Scores the first 3 seconds of your video, refuses to edit a weak hook, then times captions to every word.", word:"EDITOR"},
+    {file:"breakdown.md", name:'Break<em>down</em>', desc:"Breaks any plan down until every step has one owner, one number and one way to prove it got done.", word:"BREAKDOWN"},
+    {file:"my-voice.md", name:'My <em>voice</em>', desc:"Writes like you, learned from your real sent messages, and checks every claim before you see the draft.", word:"VOICE"},
+    {file:"landing-page.md", name:'Landing <em>page</em>', desc:"Starts from the best site in your industry, builds yours, then fixes every spot where yours isn't clearly better.", word:"LANDING"},
+    {file:"lock-it-in.md", name:'Lock it <em>in</em>', desc:"Saves every decision to one dated file, so every new chat with Claude already knows what you decided.", word:"LOCK"},
+  ];
+  const DM = "https://ig.me/m/humzabuilds";
+  const list = document.getElementById("list"), toast = document.getElementById("toast");
+  for (const s of SKILLS) {
+    const el = document.createElement("article");
+    el.className = "win";
+    el.innerHTML = `<div class="bar"><i></i><i></i><i></i><span>${s.file}</span></div>
+      <div class="body"><div class="name">${s.name}</div><p class="desc">${s.desc}</p>
+      <button class="get" type="button">Get it free <span class="word">DM "${s.word}"</span></button></div>`;
+    el.querySelector(".get").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(s.word); } catch (e) {}
+      toast.innerHTML = `Copied <b>${s.word}</b>. Paste it in my DMs.`;
+      toast.classList.add("on");
+      setTimeout(() => { location.href = DM; }, 1100);
+      setTimeout(() => toast.classList.remove("on"), 3200);
+    });
+    list.appendChild(el);
+  }
+</script>
+</body>
+</html>
