@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>This week in AI | humzabuilds</title>
+<meta name="description" content="The biggest AI drops this week, in plain English, with the official link for every one.">
+<meta name="theme-color" content="#08080a">
+<meta property="og:title" content="This week in AI | humzabuilds">
+<meta property="og:description" content="The biggest AI drops this week, in plain English, with the official link for every one.">
+<meta property="og:image" content="avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08080a; --card:#121216; --card2:#17171c; --line:#26262e; --text:#f4f4f6; --dim:#9a9aa6;
+    --acc:#ff7a2f; --acc2:#ffb27a; --glow:rgba(255,122,47,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden;
+    background-image:radial-gradient(900px 520px at 50% -140px,rgba(255,122,47,.20),transparent 70%),radial-gradient(600px 400px at 100% 100%,rgba(255,122,47,.06),transparent 70%)}
+  body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>")}
+  .wrap{max-width:460px;margin:0 auto;padding:22px 16px 56px}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .back{display:inline-flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:800;font-size:14px}
+  .back img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--acc)}
+  .live{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:var(--card)}
+  .live i{width:7px;height:7px;border-radius:50%;background:#28c840;box-shadow:0 0 0 0 rgba(40,200,64,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 7px rgba(40,200,64,0)}100%{box-shadow:0 0 0 0 rgba(40,200,64,0)}}
+  header{text-align:center;margin-top:30px}
+  h1{font-weight:900;font-size:40px;line-height:1.02;letter-spacing:-.035em}
+  .hl{display:inline-block;margin-top:8px;background:var(--acc);color:#fff;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+    font-size:40px;letter-spacing:0;padding:0 14px 2px;border-radius:10px;box-shadow:0 10px 40px var(--glow)}
+  .sub{margin:16px auto 0;color:var(--dim);font-size:15.5px;line-height:1.5;font-weight:500;max-width:360px}
+  .sub em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--acc2);font-size:18px}
+  .toc{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .toc a{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 11px;color:var(--text);text-decoration:none;font-size:13px;font-weight:700;line-height:1.25;transition:border-color .18s ease}
+  .toc a:hover{border-color:rgba(255,122,47,.55)}
+  .toc b{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#fff;font-size:11.5px;font-weight:800}
+  .label{margin:32px 0 12px;display:flex;justify-content:center}
+  .pill{background:var(--acc);color:#fff;font-weight:800;font-size:12.5px;padding:6px 12px;border-radius:7px;box-shadow:0 6px 22px var(--glow)}
+  .win{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;scroll-margin-top:16px;
+    transition:border-color .18s ease,box-shadow .18s ease}
+  .win:hover,.win:target{border-color:rgba(255,122,47,.55);box-shadow:0 0 0 1px rgba(255,122,47,.25),0 14px 40px rgba(0,0,0,.5)}
+  .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+  .bar i{width:9px;height:9px;border-radius:50%;background:#3a3a44}
+  .bar i:nth-child(1){background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+  .bar span{margin-left:8px;font-size:11.5px;color:var(--dim);font-weight:600;font-family:ui-monospace,Menlo,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar .date{margin-left:auto;flex:none;color:var(--acc2)}
+  .body{padding:16px}
+  .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--acc2);background:rgba(255,122,47,.12);border:1px solid rgba(255,122,47,.3);padding:3px 8px;border-radius:6px}
+  .name{margin-top:10px;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.02em}
+  .name em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--acc);font-size:23px}
+  .desc{margin-top:8px;color:var(--dim);font-size:14.5px;line-height:1.5;font-weight:500}
+  .desc b{color:var(--text);font-weight:700}
+  .facts{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+  .facts span{font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:700;background:#0b0b0d;border:1px solid var(--line);color:var(--text);padding:5px 8px;border-radius:7px}
+  .do{margin-top:14px;display:flex;gap:10px;align-items:flex-start;background:rgba(255,122,47,.08);border:1px solid rgba(255,122,47,.25);border-radius:12px;padding:11px 12px;font-size:14px;line-height:1.45;font-weight:600}
+  .do b{flex:none;color:var(--acc);font-weight:800}
+  .src{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--text);text-decoration:none;font-size:13.5px;font-weight:700;
+    border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#0e0e12;transition:border-color .18s ease}
+  .src:hover{border-color:rgba(255,122,47,.55)}
+  .src small{color:var(--dim);font-weight:600;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cta{margin-top:30px;text-align:center;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid rgba(255,122,47,.4);border-radius:18px;padding:22px 16px;box-shadow:0 18px 50px rgba(255,122,47,.10)}
+  .cta h2{font-weight:900;font-size:24px;letter-spacing:-.03em;line-height:1.1}
+  .cta h2 em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--acc);font-size:28px}
+  .cta p{margin-top:8px;color:var(--dim);font-size:14.5px;line-height:1.45;font-weight:500}
+  .get{margin-top:16px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;border:0;cursor:pointer;text-decoration:none;
+    background:#fff;color:#0b0b0d;border-radius:12px;padding:13px 14px;font:800 15px Inter,sans-serif;letter-spacing:-.01em;transition:transform .12s ease}
+  .get:active{transform:scale(.98)}
+  .get .word{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;font-weight:700;background:#0b0b0d;color:var(--acc2);padding:5px 9px;border-radius:7px}
+  .ghost{margin-top:10px;display:block;text-align:center;color:var(--text);text-decoration:none;font-weight:700;font-size:14px;padding:12px;border:1px solid var(--line);border-radius:12px}
+  .foot{margin-top:26px;text-align:center;color:var(--dim);font-size:12.5px;line-height:1.55}
+  .foot a{color:var(--text);text-decoration:none;font-weight:700}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,calc(100% + 60px));opacity:0;visibility:hidden;background:#fff;color:#0b0b0d;padding:13px 16px;border-radius:12px;
+    font-weight:700;font-size:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);transition:transform .25s ease,opacity .25s ease;max-width:calc(100% - 32px);text-align:center;z-index:5}
+  .toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+  .toast b{color:var(--acc)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top">
+    <a class="back" href="./"><img src="avatar.jpg" alt="">@humzabuilds</a>
+    <span class="live"><i></i>Updated Oct 22</span>
+  </div>
+
+  <header>
+    <h1>This week<br><span class="hl">in AI</span></h1>
+    <p class="sub">The 4 drops that actually matter, in plain English. Every one links to the official source. <em>No hype.</em></p>
+  </header>
+
+  <nav class="toc" aria-label="This week's stories">
+    <a href="#php"><b>1</b>AI found PHP bugs</a>
+    <a href="#fund"><b>2</b>Anthropic gives 20%</a>
+    <a href="#argon"><b>3</b>Gemini 4 Argon</a>
+    <a href="#duet"><b>4</b>Claude Duet</a>
+  </nav>
+
+  <div class="label"><span class="pill">Week of Oct 19</span></div>
+
+  <article class="win" id="php">
+    <div class="bar"><i></i><i></i><i></i><span>php-patch.md</span><span class="date">Oct 21</span></div>
+    <div class="body">
+      <span class="tag">Security</span>
+      <h2 class="name">AI found bugs in the code behind <em>70% of websites</em></h2>
+      <p class="desc">PHP runs about <b>7 in 10 websites</b>. AI tools turned up serious bugs in it, and fixed versions shipped on <b>Oct 21</b>.</p>
+      <div class="facts"><span>8.5.12</span><span>8.4.27</span><span>8.3.36</span><span>8.2.35</span></div>
+      <p class="do"><b>Do this</b>Have a website? Ask your host if it runs one of the versions above.</p>
+      <a class="src" href="https://www.php.net/" target="_blank" rel="noopener">Official release notes <small>php.net</small></a>
+    </div>
+  </article>
+
+  <article class="win" id="fund">
+    <div class="bar"><i></i><i></i><i></i><span>public-benefit-fund.md</span><span class="date">This week</span></div>
+    <div class="body">
+      <span class="tag">Anthropic</span>
+      <h2 class="name">The makers of Claude pledge about <em>20%</em> of the company</h2>
+      <p class="desc">Anthropic plans a <b>Public Benefit Fund</b> holding about 20% of its shares, set up to give directly to groups of people. It still needs <b>stockholder approval</b>.</p>
+      <p class="do"><b>Why it matters</b>If AI gets very valuable, part of that value is set aside for people, not just owners.</p>
+      <a class="src" href="https://www.anthropic.com/news/public-benefit-fund" target="_blank" rel="noopener">Read the announcement <small>anthropic.com</small></a>
+    </div>
+  </article>
+
+  <article class="win" id="argon">
+    <div class="bar"><i></i><i></i><i></i><span>gemini-4-argon.md</span><span class="date">Oct 13</span></div>
+    <div class="body">
+      <span class="tag">Google</span>
+      <h2 class="name">Gemini 4 Argon is <em>open to developers</em></h2>
+      <p class="desc">Google's newest model went wide on <b>Oct 13</b>. It is cheap to try right now on an intro price.</p>
+      <div class="facts"><span>$2 per 1M in</span><span>$10 per 1M out</span><span>until Nov 30</span></div>
+      <p class="do"><b>Do this</b>Building with AI? Test it against what you use now before the intro price ends.</p>
+      <a class="src" href="https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/" target="_blank" rel="noopener">Google's developer post <small>blog.google</small></a>
+    </div>
+  </article>
+
+  <article class="win" id="duet">
+    <div class="bar"><i></i><i></i><i></i><span>claude-duet.md</span><span class="date">Oct 21</span></div>
+    <div class="body">
+      <span class="tag">Claude</span>
+      <h2 class="name">Claude now <em>messages you first</em></h2>
+      <p class="desc"><b>Claude Duet</b> is a new app where Claude keeps an eye on things and comes to you, instead of waiting for you to ask. It asks before it sends, pays or deletes anything.</p>
+      <div class="facts"><span>US only</span><span>Pro and Max</span><span>Waitlist</span></div>
+      <p class="do"><b>Do this</b>On Pro or Max in the US? Join the waitlist now. Invites go out in waves.</p>
+      <a class="src" href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">Introducing Claude Duet <small>claude.com</small></a>
+    </div>
+  </article>
+
+  <section class="cta">
+    <h2>Get this <em>every week</em></h2>
+    <p>Send me the word and I'll DM you the list each week. Free.</p>
+    <button class="get" id="news" type="button">Send it to me <span class="word">DM "NEWS"</span></button>
+    <a class="ghost" href="./">Free Claude skills</a>
+  </section>
+
+  <p class="foot">Facts checked against each official source on Oct 22.<br><a href="https://instagram.com/humzabuilds">@humzabuilds on Instagram</a></p>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // Copies NEWS and opens Humza's Instagram DMs; the DM bot (skill_dm.py, ai-news entry) sends the list.
+  const DM = "https://ig.me/m/humzabuilds", toast = document.getElementById("toast");
+  document.getElementById("news").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText("NEWS"); } catch (e) {}
+    toast.innerHTML = "Copied <b>NEWS</b>. Paste it in my DMs.";
+    toast.classList.add("on");
+    setTimeout(() => { location.href = DM; }, 1100);
+    setTimeout(() => toast.classList.remove("on"), 3200);
+  });
+</script>
+</body>
+</html>

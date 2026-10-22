@@ -60,6 +60,11 @@
     font-weight:700;font-size:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);transition:transform .25s ease,opacity .25s ease;max-width:calc(100% - 32px);text-align:center;z-index:5}
   .toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
   .toast b{color:var(--acc)}
+  .newsbar{margin-top:22px;display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid rgba(255,122,47,.45);border-radius:14px;padding:13px 14px;color:var(--text);text-decoration:none;box-shadow:0 10px 30px rgba(255,122,47,.10)}
+  .newsbar .dot{flex:none;width:9px;height:9px;border-radius:50%;background:#28c840;box-shadow:0 0 10px rgba(40,200,64,.7)}
+  .newsbar b{display:block;font-weight:800;font-size:15px}
+  .newsbar small{display:block;margin-top:2px;color:var(--dim);font-size:12.5px;font-weight:600}
+  .newsbar .arr{margin-left:auto;color:var(--acc);font-weight:900;font-size:18px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -77,6 +82,8 @@
     <div class="step"><b>2</b><p>Paste the word in my DMs</p></div>
     <div class="step"><b>3</b><p>Get the download</p></div>
   </div>
+
+  <a class="newsbar" href="news.html"><span class="dot"></span><span><b>This week in AI</b><small>4 drops, plain English, official links</small></span><span class="arr">&rarr;</span></a>
 
   <div class="label"><span class="pill">The skills</span></div>
   <div id="list"></div>
