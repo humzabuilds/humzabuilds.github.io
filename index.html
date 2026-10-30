@@ -74,6 +74,28 @@
   .tvbtn .t em{font-style:normal;background:#0b0b0d;color:var(--acc2);font-size:12px;font-weight:800;padding:3px 7px;border-radius:6px;vertical-align:3px;margin-right:6px}
   .tvbtn small{display:block;margin-top:4px;font-size:13px;font-weight:600;opacity:.9}
   .tvbtn .arr{margin-left:auto;font-weight:900;font-size:22px}
+  .gate{margin-top:24px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid rgba(255,122,47,.45);border-radius:16px;padding:18px 16px;box-shadow:0 10px 30px rgba(255,122,47,.10)}
+  .gate h2{font-weight:900;font-size:21px;letter-spacing:-.02em}
+  .gate h2 em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--acc);font-size:24px}
+  .gate .d{margin-top:6px;color:var(--dim);font-size:14px;line-height:1.45;font-weight:500}
+  .gate form{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .gate input[type=email]{width:100%;background:#0b0b0d;border:1px solid var(--line);border-radius:12px;padding:13px 14px;color:var(--text);font:600 16px Inter,sans-serif}
+  .gate input[aria-invalid=true]{border-color:#ff5f57}
+  .btn{width:100%;border:0;cursor:pointer;background:var(--acc);color:#fff;border-radius:12px;padding:13px 14px;font:800 15px Inter,sans-serif;box-shadow:0 10px 30px var(--glow)}
+  .btn:disabled{opacity:.6}
+  .consent{margin-top:8px;color:var(--dim);font-size:11.5px;line-height:1.45}
+  .consent a{color:var(--dim)}
+  .msg{margin-top:8px;font-size:13.5px;font-weight:600}.msg.err{color:#ff8a80}.msg.ok{color:#7ee08a}.msg a{color:var(--dim)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .open{display:none;margin-top:12px;background:#0b0b0d;border:1px solid var(--line);border-radius:12px;padding:14px;white-space:pre-wrap;word-break:break-word;font-size:14px;line-height:1.5;color:var(--text)}
+  .open a{color:var(--acc2)}
+  .open.on{display:block}
+  .row{display:flex;gap:8px;margin-top:10px}
+  .row a,.row button{flex:1;text-align:center;text-decoration:none;border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:10px;padding:10px;font:700 13.5px Inter,sans-serif;cursor:pointer}
+  .row a.dl{background:#fff;color:#0b0b0d;border-color:#fff}
+  .feat{border-color:rgba(255,122,47,.7)}
+  #feat{margin-top:14px}
+  .gate form[hidden]{display:none}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -83,8 +105,23 @@
     <img class="av" src="avatar.jpg" alt="Humza">
     <div class="handle">@humzabuilds <span>on Instagram</span></div>
     <h1>Claude skills,<br><span class="hl">free every week</span></h1>
-    <p class="sub">The exact skills from my videos. Tap one, send me the word, and it lands in your DMs. <em>No catch.</em></p>
+    <p class="sub">The exact skills from my videos. Drop your email once and every skill opens right here. <em>No catch.</em></p>
   </section>
+
+  <section class="gate" id="gate" aria-labelledby="gate-h">
+    <h2 id="gate-h">Unlock every skill <em>free</em></h2>
+    <p class="d">One email and they all open. I send one new skill every Sunday too.</p>
+    <form id="form" novalidate>
+      <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <label for="email" class="hp">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required>
+      <button class="btn" type="submit" id="go">Unlock the skills</button>
+    </form>
+    <p class="consent">By signing up you agree to get one email when a new free guide drops. Unsubscribe any time with the link in every email. <a href="privacy.html">Privacy</a></p>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </section>
+
+  <div id="feat"></div>
 
   <a class="tvbtn" href="tv.html">
     <span class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="12.5" rx="2"/><path d="M8 21h8M9 2.5l3 2.5 3-2.5"/></svg></span>
@@ -92,48 +129,94 @@
     <span class="arr" aria-hidden="true">&rarr;</span>
   </a>
 
-  <div class="steps" aria-label="How it works">
-    <div class="step"><b>1</b><p>Tap a skill</p></div>
-    <div class="step"><b>2</b><p>Paste the word in my DMs</p></div>
-    <div class="step"><b>3</b><p>Get the download</p></div>
-  </div>
-
   <a class="newsbar" href="news.html"><span class="dot"></span><span><b>This week in AI</b><small>4 drops, plain English, official links</small></span><span class="arr">&rarr;</span></a>
 
   <div class="label"><span class="pill">The skills</span></div>
   <div id="list"></div>
 
-  <p class="foot">Works in the Claude app, claude.ai and Claude Code.<br>New one every week. <a href="https://instagram.com/humzabuilds">Follow so you don't miss it</a></p>
+  <p class="foot">Works in the Claude app, claude.ai and Claude Code.<br>New one every Sunday. <a href="https://instagram.com/humzabuilds">Follow @humzabuilds</a></p>
 </main>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-  // Each button copies its word and opens Humza's Instagram DMs; the DM bot (skill_dm.py, dm_word) takes it from there.
-  const SKILLS = [
-    {file:"reverse-engineer.md", name:'Reverse Engineer <em>Anything</em>', desc:"Pick one feature of an app you like and rebuild your own version of it. The real repo plus the exact prompt I used.", word:"REA"},
-    {file:"video-editor.md", name:'Video <em>editor</em>', desc:"Scores the first 3 seconds of your video, refuses to edit a weak hook, then times captions to every word.", word:"EDITOR"},
-    {file:"breakdown.md", name:'Break<em>down</em>', desc:"Breaks any plan down until every step has one owner, one number and one way to prove it got done.", word:"BREAKDOWN"},
-    {file:"my-voice.md", name:'My <em>voice</em>', desc:"Writes like you, learned from your real sent messages, and checks every claim before you see the draft.", word:"VOICE"},
-    {file:"landing-page.md", name:'Landing <em>page</em>', desc:"Starts from the best site in your industry, builds yours, then fixes every spot where yours isn't clearly better.", word:"LANDING"},
-    {file:"lock-it-in.md", name:'Lock it <em>in</em>', desc:"Saves every decision to one dated file, so every new chat with Claude already knows what you decided.", word:"LOCK"},
+  // C-0724 (2026-10-29): one email unlocks every skill on this page. skills.json is built from the DM bot's
+  // messages.json (build_skills_json.py), and the DM links here as ?s=<key> so that skill shows first.
+  const API = "https://humzabuilds-subscribe.bettermarketing.workers.dev";
+  const LIST = [
+    {key:"rea", file:"reverse-engineer.md", name:'Reverse Engineer <em>Anything</em>', desc:"Pick one feature of an app you like and rebuild your own version of it. The real repo plus the exact prompt I used."},
+    {key:"video-editor", file:"video-editor.md", name:'Video <em>editor</em>', desc:"Scores the first 3 seconds of your video, refuses to edit a weak hook, then times captions to every word."},
+    {key:"breakdown", file:"breakdown.md", name:'Break<em>down</em>', desc:"Breaks any plan down until every step has one owner, one number and one way to prove it got done."},
+    {key:"my-voice", file:"my-voice.md", name:'My <em>voice</em>', desc:"Writes like you, learned from your real sent messages, and checks every claim before you see the draft."},
+    {key:"landing-page", file:"landing-page.md", name:'Landing <em>page</em>', desc:"Starts from the best site in your industry, builds yours, then fixes every spot where yours isn't clearly better."},
+    {key:"lock-it-in", file:"lock-it-in.md", name:'Lock it <em>in</em>', desc:"Saves every decision to one dated file, so every new chat with Claude already knows what you decided."},
   ];
-  const DM = "https://ig.me/m/humzabuilds";
-  const list = document.getElementById("list"), toast = document.getElementById("toast");
-  for (const s of SKILLS) {
+  let SK = {}, unlocked = false;
+  try { unlocked = localStorage.getItem("hb_unlocked") === "1"; } catch (e) {}
+  const esc = t => t.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const linkify = t => esc(t).replace(/https?:\/\/[^\s<]+[^\s<.,;:!?)]/g, u => `<a href="${u}" rel="noopener" target="_blank">${u}</a>`);
+
+  function card(item, featured) {
     const el = document.createElement("article");
-    el.className = "win";
-    el.innerHTML = `<div class="bar"><i></i><i></i><i></i><span>${s.file}</span></div>
-      <div class="body"><div class="name">${s.name}</div><p class="desc">${s.desc}</p>
-      <button class="get" type="button">Get it free <span class="word">DM "${s.word}"</span></button></div>`;
-    el.querySelector(".get").addEventListener("click", async () => {
-      try { await navigator.clipboard.writeText(s.word); } catch (e) {}
-      toast.innerHTML = `Copied <b>${s.word}</b>. Paste it in my DMs.`;
-      toast.classList.add("on");
-      setTimeout(() => { location.href = DM; }, 1100);
-      setTimeout(() => toast.classList.remove("on"), 3200);
+    el.className = "win" + (featured ? " feat" : "");
+    el.innerHTML = `<div class="bar"><i></i><i></i><i></i><span>${esc(item.file)}</span></div>
+      <div class="body"><div class="name">${item.name}</div>${item.desc ? `<p class="desc">${esc(item.desc)}</p>` : ""}
+      <button class="get" type="button">Get it free <span class="word">${unlocked ? "OPEN" : "UNLOCK"}</span></button>
+      <div class="open"></div></div>`;
+    const btn = el.querySelector(".get"), box = el.querySelector(".open");
+    btn.addEventListener("click", () => {
+      if (!unlocked) { document.getElementById("gate").scrollIntoView({behavior:"smooth", block:"center"}); document.getElementById("email").focus({preventScroll:true}); return; }
+      const s = SK[item.key]; if (!s) return;
+      box.innerHTML = linkify(s.body) + `<div class="row">${s.download ? `<a class="dl" href="${esc(s.download)}">Download</a>` : ""}<button type="button" class="cp">Copy</button></div>`;
+      box.querySelector(".cp").addEventListener("click", async ev => {
+        let ok = false; try { await navigator.clipboard.writeText(s.body); ok = true; } catch (e) {}
+        ev.target.textContent = ok ? "Copied" : "Select and copy";
+      });
+      box.classList.add("on"); btn.style.display = "none";
     });
-    list.appendChild(el);
+    return el;
   }
+  function render() {
+    const want = new URLSearchParams(location.search).get("s");
+    const feat = document.getElementById("feat"), list = document.getElementById("list");
+    feat.innerHTML = ""; list.innerHTML = "";
+    if (want && SK[want]) {
+      const known = LIST.find(x => x.key === want);
+      const c = card(known || {key:want, file:want + ".md", name:esc(SK[want].name), desc:""}, true);
+      feat.appendChild(c);
+      if (unlocked) c.querySelector(".get").click();
+    }
+    for (const it of LIST) if (it.key !== want) list.appendChild(card(it, false));
+  }
+  fetch("skills.json", {cache:"no-store"}).then(r => r.json()).then(j => { SK = j; render(); }).catch(() => render());
+
+  const form = document.getElementById("form"), email = document.getElementById("email"),
+        go = document.getElementById("go"), msg = document.getElementById("msg");
+  const RE = /^[^\s@<>()",;:]+@[^\s@<>()",;:]+\.[^\s@<>()",;:]{2,}$/;
+  function show(kind, html) { msg.className = "msg " + kind; msg.innerHTML = html; }
+  const consent = document.querySelector(".consent");
+  if (unlocked) { form.hidden = true; consent.hidden = true; show("ok", "You're in. Every skill below is open."); }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const v = email.value.trim();
+    if (!RE.test(v)) { email.setAttribute("aria-invalid", "true"); show("err", "That email doesn't look right. Check it and try again."); email.focus(); return; }
+    email.removeAttribute("aria-invalid");
+    go.disabled = true; go.textContent = "Unlocking..."; show("", "");
+    const src = ("skill-" + (new URLSearchParams(location.search).get("s") || "home")).replace(/[^a-z0-9_-]/gi, "").slice(0, 40);
+    try {
+      const res = await fetch(API + "/subscribe", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: v, source: src, website: form.website.value }) });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) {
+        unlocked = true; try { localStorage.setItem("hb_unlocked", "1"); } catch (e2) {}
+        form.hidden = true; consent.hidden = true;
+        show("ok", "You're in. Every skill below is open." + (data.unsubscribe ? ' <a href="' + data.unsubscribe + '">Changed your mind? Unsubscribe</a>' : ""));
+        render();
+        return;
+      }
+      if (data.error === "invalid_email") { email.setAttribute("aria-invalid", "true"); show("err", "That email doesn't look right. Check it and try again."); }
+      else show("err", "Couldn't save that just now. Try again in a minute.");
+    } catch (err) { show("err", "Couldn't reach the server. Check your connection and try again."); }
+    finally { go.disabled = false; go.textContent = "Unlock the skills"; }
+  });
 </script>
 </body>
 </html>

@@ -1,0 +1,182 @@
+{
+ "breakdown": {
+  "name": "breakdown",
+  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/breakdown.zip"
+ },
+ "my-voice": {
+  "name": "writing",
+  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/my-voice.zip"
+ },
+ "lock-it-in": {
+  "name": "lock it in",
+  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/lock-it-in.zip"
+ },
+ "landing-page": {
+  "name": "landing page",
+  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/landing-page.zip"
+ },
+ "video-editor": {
+  "name": "video editing",
+  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/video-editor.zip"
+ },
+ "rea": {
+  "name": "Reverse Engineer Anything",
+  "body": "Here's the real Reverse Engineer Anything repo 👇\nhttps://github.com/morluto/rea\n\nOnly use this one. Fake copies with malware are going around. Only use it on apps you own or are allowed to inspect.\n\nThe prompt I used:\nI want to understand one feature of [APP], then build my own version.\n1. Use REA to inspect how [FEATURE] works. Start from what the app does on screen, and only go deeper if you need to.\n2. Write down what you found in plain English: what triggers it, what data it uses, and what it shows.\n3. Build the smallest version of just that feature in [LANGUAGE]. Nothing else from the app.\n4. Test yours against the real one side by side and list every difference.\n5. Fix the differences and repeat until they match.\nAsk me before you install anything or change anything outside this folder.",
+  "download": ""
+ },
+ "four-files": {
+  "name": "four files setup prompt",
+  "body": "Here's the prompt 👇 Paste it into Claude Code:\n\nSet up a CLAUDE.md, a context folder, a memory.md and a skills folder for me. Interview me first, one question at a time.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "tv-safe-guide": {
+  "name": "safe TV cleanup guide",
+  "body": "Here's the safe step by step guide 👇\n\nGoogle TV, Android TV or Fire TV: turn on debug mode on your TV, open Claude Code on a laptop on the same WiFi, and paste this prompt:\n\n\"Find my TV on this network, connect to it, list every app on it, and tell me which ones are safe to turn off. Don't touch anything until I say yes.\"\n\nTwo rules so you don't break your TV:\n1. Tell it to turn apps off, never delete them.\n2. Make it save a list of every app first, so you can undo anything.\n\nSamsung, LG, Roku or Vizio? You can't do the AI part, but you can turn off the setting that tracks what you watch. Menu names can vary by model:\nSamsung: Settings > Support > Terms & Privacy > Privacy Choices > Viewing Information Services OFF\nLG: Settings > General > System > Additional Settings > Live Plus OFF\nRoku: Settings > Privacy > Smart TV Experience > Use info from TV inputs OFF\nVizio: System > Reset & Admin > Viewing Data OFF\nSony (Google TV): Settings > Privacy > Samba Interactive TV OFF\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "tv-debloat": {
+  "name": "Smart TV cleanup steps",
+  "body": "Here's the safe way, no coding 👇 Do these in order and stop when it's good enough.\n\n1. Turn off what the TV lets you (2 min)\nFire TV: Settings > Preferences > Privacy Settings > turn off Interest based Ads, Device Usage Data and Collect App Usage Data\nGoogle TV: Settings > Privacy > Ads > Delete advertising ID\nAny TV: in Privacy or Terms, turn off anything about viewing information or content recognition\n\n2. Get a cleaner home screen (10 min, Google TV or Android TV)\nInstall Projectivy Launcher from the Play Store on your TV. It hides the ad rows, your apps stay, and uninstalling it undoes everything.\n\nI'm not telling you to let an AI delete system apps. That's how someone bricked their TV. Menu names change by model, so if yours looks different, ask any AI: \"My TV is a [BRAND] [MODEL]. Where is the privacy and ads menu?\"\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "tv-privacy": {
+  "name": "TV privacy steps",
+  "body": "Here's where the viewing data setting hides 👇 Names change by model and year, so if yours looks different, paste this into any AI:\n\nMy TV is a [BRAND] [MODEL]. Walk me through turning off viewing data / ACR, one menu at a time. Tell me what each menu is called on my exact model.\n\nSamsung: Settings > Support (or General & Privacy) > Terms & Privacy > Privacy Choices > Viewing Information Services: off\nLG: Settings > All Settings > General > System > Additional Settings > Live Plus: off\nRoku: Settings > Privacy > Smart TV Experience > uncheck Use info from TV inputs\nVizio: Settings > Admin & Privacy > Viewing Data: off\nSony: Settings > look for Samba Interactive TV and turn it off\nHisense / TCL: if it runs Roku or Google TV, follow that menu; otherwise use the prompt\n\nYour apps keep working after. And if you tried my last TV video, turn network debugging back off.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "ai-news": {
+  "name": "this week in AI",
+  "body": "Here's what dropped in AI this week 👇\n\n1. PHP bugs found with AI: PHP runs about 70% of websites. Fixed Oct 21 in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. If you have a site, ask your host if you're updated.\n\n2. Anthropic's Public Benefit Fund: about 20% of Anthropic's shares toward the public good (pending stockholder approval). anthropic.com/news/public-benefit-fund\n\n3. Gemini 4 Argon: Google's new top model, open to developers since Oct 13, intro price $2 in and $10 out per million tokens until Nov 30.\n\n4. Claude Duet: Anthropic's new app that messages you first. Waitlist for US Pro and Max.\n\nFull list with official links: https://humzabuilds.github.io/news.html",
+  "download": ""
+ },
+ "ai-phone": {
+  "name": "AI phone setup",
+  "body": "Here's the setup and my 5 prompts 👇\n\nIt's Google's open source Artemis: https://github.com/google/artemis\n\nSetup: plug an Android phone into your laptop, turn on USB debugging, then run this one line:\ngit clone https://github.com/google/artemis.git && cd artemis && ./start.sh\nIt connects itself to Claude Code.\n\nMy first 5 prompts:\n1) Find the cheapest ride home and show me before you book.\n2) Turn off every notification except texts and calls.\n3) Clear every unread badge and tell me what you skipped.\n4) Find my last 3 food orders and tell me what I spent.\n5) Set my phone up for sleep: Do Not Disturb at 11, alarm at 7.\nAlways end with: show me before you buy, book or send anything.\n\nBefore you try it: your AI can see everything on your screen, so use a spare phone, or log out of your bank and email first. Android only for now; iPhone is on their roadmap.",
+  "download": ""
+ },
+ "ai-jarvis": {
+  "name": "Build your own Jarvis",
+  "body": "Here are the 4 pieces and a build prompt 👇\n\n1) Ears: Whisper (free, runs on your computer): pip install -U openai-whisper (also needs ffmpeg)\n2) Eyes: Google's MediaPipe Gesture Recognizer. It tracks your hand through the webcam and knows a closed fist or a finger pointing up out of the box.\n3) Brain: Claude Code in headless mode: claude -p \"your words\" --allowedTools \"Read,Write,Bash(open *)\" (without it, headless mode refuses tools that need approval). Docs: https://code.claude.com/docs/en/headless\n4) Mouth: Kokoro, a free open voice model: pip install kokoro soundfile\n\nPaste this into Claude Code:\n\"Build me a voice assistant on this computer. Listen with Whisper, watch my webcam with MediaPipe's gesture recognizer (closed fist = start dictation), send what I say to claude -p, and speak the answer with Kokoro. Add one hotkey that stops everything.\"\n\nSafety: keep the camera and mic on your own computer, only allow the tools it needs with --allowedTools, and make it ask you before it sends, buys or deletes anything.",
+  "download": ""
+ },
+ "yt-agent": {
+  "name": "AI agent that watches YouTube for you",
+  "body": "Here are the 4 commands and a build prompt 👇\n\n1) List the newest videos with yt-dlp (free, open source): yt-dlp --flat-playlist -I 1:10 --print \"%(id)s %(title)s\" \"https://www.youtube.com/@CHANNEL/shorts\" Docs: https://github.com/yt-dlp/yt-dlp\n2) Grab only the audio: yt-dlp -f \"ba[ext=m4a]\" -o \"%(id)s.%(ext)s\" VIDEO_URL\n3) Write down every word with Whisper (free, runs on your computer): pip install -U openai-whisper (also needs ffmpeg), then whisper VIDEO_ID.m4a --model small --output_format txt\n4) Pull out the hooks with Claude Code in headless mode: cat *.txt | claude -p \"Give me the first sentence of each transcript and the hook patterns that repeat\" --tools \"\"\n\nPaste this into Claude Code:\n\"Build me a daily script on this computer. Take my list of YouTube channels, use yt-dlp to list each one's 10 newest Shorts, download only the audio, transcribe it with Whisper, then pipe the transcripts to claude -p with all tools turned off and write me a one page report of the hook patterns that repeat. Run it once a day.\"\n\nSafety: use it for your own notes on public videos. Never re-upload anyone's video or copy their script word for word, and run claude -p with --tools \"\" so it has no tools at all and only reads the text you pipe in.",
+  "download": ""
+ },
+ "android-debloat": {
+  "name": "Free Android debloater (Universal Android Debloater)",
+  "body": "Here's the free debloater and the prompt 👇\n\nUniversal Android Debloater (free, open source, Android only, no root): https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation\n\nPaste this into Claude Code:\n\"Walk me through Universal Android Debloater on my Android phone, one step at a time. First help me turn on USB debugging and install ADB on this computer. Then help me open the app, and only suggest removing apps marked Recommended. Before I remove anything, tell me what it does and how to restore it.\"\n\nSafety: start with the Recommended list only, and skip anything you are not sure about. Android only, it does not work on iPhone.",
+  "download": ""
+ },
+ "claudemy": {
+  "name": "Claudemy, your own free Udemy",
+  "body": "Here's Claudemy 👇\n\nhttps://github.com/assafkip/claudemy\n\nInstall it as a Claude Code skill (the steps are in the README), then type: teach me negotiation (or any topic). It researches the web and gives you short two-host audio lessons, each with a card and links to every page it used.",
+  "download": ""
+ },
+ "machine-skill": {
+  "name": "Machine Skill, one line to a working machine",
+  "body": "Here's Machine Skill 👇\n\nhttps://github.com/AirsupHQ/machine-skill\n\nInstall it as a Claude Code skill (the steps are in the README), then describe any machine in one line, like a jet engine. It builds a 3D simulation in one HTML file that opens in your browser.",
+  "download": ""
+ },
+ "site-tools": {
+  "name": "4 free tools before AI builds your website",
+  "body": "Here are the 4 tools and the prompt 👇\n\n1) Frontend design skill (Anthropic): https://github.com/anthropics/skills/tree/main/skills/frontend-design\n2) shadcn MCP server: https://ui.shadcn.com/docs/mcp\n3) Playwright MCP (Microsoft): https://github.com/microsoft/playwright-mcp\n4) Chrome DevTools MCP: https://github.com/ChromeDevTools/chrome-devtools-mcp\n\nPaste this into your AI coding tool once all 4 are set up:\n\"Build my site with the frontend design skill and real shadcn components. Then open it with Playwright and click through every page like a visitor, and run a Chrome DevTools performance trace. Fix anything broken or slow, and tell me what you changed.\"\n\nSafety: run Playwright and DevTools in a browser profile with nothing personal in it. They can read everything in the browser they control.",
+  "download": ""
+ },
+ "lookbook": {
+  "name": "Lookbook: one photo, eight poses",
+  "body": "Here's the lookbook prompt 👇\n\nUpload a photo where your whole outfit and your face are clear, then paste:\n\"Use the person in this photo. Keep their face, hair, body and outfit exactly the same. Make one tall image with eight full body poses of them: a selfie, walking toward the camera, looking back over the shoulder, on a phone call, sitting, leaning, hands in pockets, laughing. Plain white background, soft studio light, no text.\"\n\nIf the faces come out different, ask for four poses instead of eight.\n\nSafety: before you upload your face, turn off the setting that lets the app train on your photos (ChatGPT: Settings > Data controls > Improve the model for everyone).",
+  "download": ""
+ },
+ "ai-humans": {
+  "name": "Every AI gave the same opinion about humans",
+  "body": "Here's the prompt 👇\n\n\"Give me your most controversial opinion about humans. No hedging.\"\n\nAsk it 3 times in new chats. Then: \"Now argue the opposite as strongly as you can.\"\n\nThe original test: https://modelcompare.ai/blog/ai-models-controversial-take-on-humans",
+  "download": ""
+ },
+ "digup": {
+  "name": "DigUp",
+  "body": "Here's DigUp 👇\nhttps://github.com/ARahim3/DigUp\n\nDownload it only from the GitHub Releases page or digup.arahim.dev. On a Mac: brew install --cask arahim3/tap/digup. Pick the folders you want it to search, then press Shift + Command + Space (Ctrl + Shift + Space on Windows and Linux) and type what you remember.\n\nGood to know:\n1. Needs a Mac with Apple Silicon and macOS 14 or newer. Windows and Linux are in beta.\n2. First launch downloads an 865 MB model once. Everything runs on your own computer: no account, no telemetry, and it never changes, moves or uploads your files.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "coop-anything": {
+  "name": "Co-op Anything",
+  "body": "Here's Co-op Anything 👇\n\nhttps://github.com/cranebeaker/coop-anything\n\nOpen Claude in a folder, paste the link, and name the game you want to play with friends. The readme lists games already done.\n\nSafety: only games you own, and never games with online anti-cheat.",
+  "download": ""
+ },
+ "audio-studio": {
+  "name": "Audio Studio, free AI music and sound effects",
+  "body": "Here's Audio Studio 👇\n\nhttps://github.com/kanaworksai-hue/audio-studio-mcp\n\nNeeds an Apple Silicon Mac (16 GB RAM is best, about 6 GB free space) or a Windows PC with an NVIDIA card. Run the installer, add it to Claude with the command it prints, then just ask for the sound you want.",
+  "download": ""
+ },
+ "linkedin-skills": {
+  "name": "Free LinkedIn skills for Claude",
+  "body": "Here's the LinkedIn skill set 👇\n\nhttps://github.com/avi691/linkedin-agent-skill\n\nPaste the link into Claude and say install this skill. Then fill in voice.md with three of your own posts so it sounds like you. Nothing posts without your yes.",
+  "download": ""
+ },
+ "sandbox-safe": {
+  "name": "Anthropic's free AI sandbox",
+  "body": "Here's Anthropic's free sandbox tool 👇\n\nhttps://github.com/anthropics/sandbox-runtime\n\nIt locks an AI to the folders and websites you pick, at the system level. Paste the link into Claude and ask it to set it up for you.\n\nMy 3 rules: run AI in a sandbox, never hand it passwords or bank logins, and read anything before it goes live.",
+  "download": ""
+ },
+ "hire-test": {
+  "name": "The hire test prompt",
+  "body": "Here's the hire test prompt 👇 Paste it into Claude:\n\n\"I own a business. Here is one task I do every week: [describe it]. Here is one example of it done right: [paste it]. Do this task for the new case below, the same way. Then tell me what you needed from me, what you'd get wrong without it, and whether you could do this every week.\"\n\nNew case: [paste it]\n\nTry it on your 3 most hated weekly tasks. More free tools: https://humzabuilds.github.io/",
+  "download": ""
+ },
+ "live-session": {
+  "name": "the free live session for business owners",
+  "body": "You're on the list for the free live session 🙌 I'll email you the date and link as soon as it's set. Free tools in the meantime: https://humzabuilds.github.io/",
+  "download": ""
+ },
+ "safe-cleanup": {
+  "name": "safe storage cleanup prompt",
+  "body": "Here's the safe storage cleanup prompt 👇\n\nPaste this into Claude Code in your home folder:\n\n\"Find the 20 biggest folders and files in my home folder. Use only names, sizes and dates; do not open or read any file. Do not delete, move or change anything yet. Mark anything in iCloud Drive, OneDrive, Dropbox, Photos, Mail, Messages, Library or AppData as DO NOT TOUCH. For each item, tell me what it is, whether it is safe to remove, and how much space I would get back. Then wait for me to pick. Show me the exact path and wait for my yes before each move. Move items only to the Trash (Mac) or Recycle Bin (Windows); never use rm, del or Remove-Item, never empty the Trash, and if a move fails, tell me and stop.\"\n\nBefore you run it:\n1. Back up first: Time Machine on Mac, File History on Windows.\n2. Keep Claude Code in manual mode so it asks before it changes anything (Shift+Tab cycles the modes, so check which one is on).\n3. Trash or Recycle Bin only, and don't empty it until you've checked. Put Back undoes a move.\n4. Never move synced folders (iCloud Drive, OneDrive, Dropbox, Photos): trashing one deletes it on every device.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "scan-to-text": {
+  "name": "Unlimited OCR 2 setup prompt",
+  "body": "Here's Unlimited OCR 2 👇\nhttps://github.com/baidu/Unlimited-OCR\n\nSetup prompt (paste into Claude Code or your own AI coding agent):\n\n\"Set up Unlimited OCR 2 from github.com/baidu/Unlimited-OCR on this computer. Read the README first and follow its install steps. Before you run anything, show me every command and every file you will download, and wait for my yes. Use a new Python environment so nothing else on my computer changes. Then run it on one PDF I pick and save the text next to it.\"\n\nBefore you run it:\n1. You need an NVIDIA graphics card. Baidu tested it on an NVIDIA A800-80GB, so smaller cards may be slow or run out of memory.\n2. It loads with trust_remote_code=True, so read the code before you run it.\n3. Skip the online demo for anything private. Run it on your own machine so your files never leave your computer.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "design-tools": {
+  "name": "4 free design tools",
+  "body": "Here are the 4 free design tools 👇\n\n1. Hallmark: https://github.com/Nutlope/hallmark\n   npx skills add nutlope/hallmark -g\n\n2. Taste Skill: https://github.com/Leonxlnx/taste-skill\n   npx skills add https://github.com/Leonxlnx/taste-skill --skill design-taste-frontend\n\n3. Vercel Web Interface Guidelines: https://vercel.com/design/guidelines\n   npx skills add vercel-labs/agent-skills --skill web-design-guidelines\n\n4. Playwright CLI: https://github.com/microsoft/playwright-cli\n   npm install -g @playwright/cli@latest\n   playwright-cli install --skills\n\nRead each README before you install, and keep your agent asking before it runs commands.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "whiteboard": {
+  "name": "Whiteboard teacher video skill",
+  "body": "Here's the whiteboard video skill 👇\nhttps://github.com/liangdabiao/whiteboard-teacher-video\n\nPaste this to your AI coding agent:\n\"Install this skill: github.com/liangdabiao/whiteboard-teacher-video. Read the README first and show me every command before you run it.\"\n\nGood to know:\n1. The voice uses edge-tts, which sends your script text to Microsoft's TTS service.\n2. The render engine it uses is AGPL-3.0.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "tutor": {
+  "name": "DeepTutor",
+  "body": "Here's DeepTutor 👇\nhttps://github.com/HKUDS/DeepTutor\n\nInstall: python -m pip install \"deeptutor[full]\", then follow the Get Started guide at deeptutor.info. Make a knowledge base, drop in your PDF, and open Guided Learning. Video lessons need Node.js 22+.\n\nGood to know:\n1. Your files go to whatever AI model you connect, and to the Embedding provider too. For anything private, set BOTH the LLM and the Embedding provider to a local model (LM Studio or Ollama).\n2. Turn off web search and Edge narration if you want everything to stay home; narration sends lesson text to Microsoft.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "stock": {
+  "name": "TradingAgents",
+  "body": "Here's TradingAgents 👇\nhttps://github.com/TauricResearch/TradingAgents\n\nNeeds Python 3.11+. Clone it, install it, then run the CLI with a ticker and a date. Each run needs your own AI account: a ChatGPT Plus or Pro plan, your own API key, or a free local model with Ollama.\n\nGood to know:\n1. It is a research tool. It places no trades: it writes a report and ends on a rating (Buy, Hold, Sell and so on). It is not financial advice.\n2. Never connect it to a real brokerage account, and keep your data keys in a local .env file, never in a chat.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "bank": {
+  "name": "safe bank-statement prompt",
+  "body": "Here's the prompt 👇\n\n1. On your bank's website, download your last 3 months of transactions as a spreadsheet (CSV).\n2. Delete your name, address and account number before you upload it.\n3. Give the file to your AI with:\n\"List every recurring charge and fee in this file, group by merchant, and show the monthly total and the yearly total for each.\"\n\nGood to know: never paste your login, card number or one-time codes into any AI. This is our tip, not Bank of America's.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "offline": {
+  "name": "offline survival AI",
+  "body": "Here's the offline AI 👇\nhttps://www.brangus.io/survival-llm\n\nDownload it only from that page. Needs an Apple Silicon Mac (macOS 14+) or 64-bit Windows 10/11, 16 GB of memory or more, and about 21 to 112 GB free depending on the library you pick. Set it up while you have internet; the download takes from 20 minutes to a couple of hours.\n\nGood to know:\n1. It isn't from an app store, so your computer asks you to approve it the first time.\n2. Small models can get things wrong. Check every answer against the source it shows, keep a real first aid book, and call 911 in a real emergency.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "room": {
+  "name": "read-only hotel room check prompt",
+  "body": "Here's my read-only version of the prompt 👇 Paste it into Claude Code on the Wi-Fi the room gave you:\n\n\"You are a read-only check-in safety assistant on the Wi-Fi this room gave me. Explain each command in one line and ask before running it. 1) List devices on this network (arp-scan or nmap -sn only, no port attacks, no logins, never open a video stream). Show device names and MAC addresses masked unless the vendor is a camera maker, and flag any camera brands. 2) Run a 30 second Bluetooth scan every 2 minutes for 10 minutes and flag AirTag, Tile or SmartTag signals. 3) Walk me through a flashlight sweep of mirrors, vents and anything pointed at the bed or shower. 4) Give me a ranked table and next steps. Remind me a clean result is not proof.\"\n\nGood to know:\n1. Some hotels ban network scans in their Wi-Fi rules. If you're unsure, or staff object, skip step 1 and do the Bluetooth and flashlight checks.\n2. A clean result isn't proof. Still check the room with your own eyes.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ }
+}
