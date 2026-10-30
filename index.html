@@ -164,7 +164,7 @@
     const btn = el.querySelector(".get"), box = el.querySelector(".open");
     btn.addEventListener("click", () => {
       if (!unlocked) { document.getElementById("gate").scrollIntoView({behavior:"smooth", block:"center"}); document.getElementById("email").focus({preventScroll:true}); return; }
-      const s = SK[item.key]; if (!s) return;
+      const s = Object.prototype.hasOwnProperty.call(SK, item.key) ? SK[item.key] : null; if (!s) return;
       box.innerHTML = linkify(s.body) + `<div class="row">${s.download ? `<a class="dl" href="${esc(s.download)}">Download</a>` : ""}<button type="button" class="cp">Copy</button></div>`;
       box.querySelector(".cp").addEventListener("click", async ev => {
         let ok = false; try { await navigator.clipboard.writeText(s.body); ok = true; } catch (e) {}
@@ -178,7 +178,7 @@
     const want = new URLSearchParams(location.search).get("s");
     const feat = document.getElementById("feat"), list = document.getElementById("list");
     feat.innerHTML = ""; list.innerHTML = "";
-    if (want && SK[want]) {
+    if (want && Object.prototype.hasOwnProperty.call(SK, want)) {
       const known = LIST.find(x => x.key === want);
       const c = card(known || {key:want, file:want + ".md", name:esc(SK[want].name), desc:""}, true);
       feat.appendChild(c);

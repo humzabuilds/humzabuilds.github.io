@@ -1,27 +1,27 @@
 {
  "breakdown": {
   "name": "breakdown",
-  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "body": "Setup takes about a minute: in Claude, open Customize, then Skills, click +, then Create skill, then Upload a skill, and pick the zip as it is. (Skills need code execution on, under Settings, then Capabilities.) Using Claude Code? Unzip it into ~/.claude/skills instead.",
   "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/breakdown.zip"
  },
  "my-voice": {
   "name": "writing",
-  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "body": "Setup takes about a minute: in Claude, open Customize, then Skills, click +, then Create skill, then Upload a skill, and pick the zip as it is. (Skills need code execution on, under Settings, then Capabilities.) Using Claude Code? Unzip it into ~/.claude/skills instead.",
   "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/my-voice.zip"
  },
  "lock-it-in": {
   "name": "lock it in",
-  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "body": "Setup takes about a minute: in Claude, open Customize, then Skills, click +, then Create skill, then Upload a skill, and pick the zip as it is. (Skills need code execution on, under Settings, then Capabilities.) Using Claude Code? Unzip it into ~/.claude/skills instead.",
   "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/lock-it-in.zip"
  },
  "landing-page": {
   "name": "landing page",
-  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "body": "Setup takes about a minute: in Claude, open Customize, then Skills, click +, then Create skill, then Upload a skill, and pick the zip as it is. (Skills need code execution on, under Settings, then Capabilities.) Using Claude Code? Unzip it into ~/.claude/skills instead.",
   "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/landing-page.zip"
  },
  "video-editor": {
   "name": "video editing",
-  "body": "Open the zip and the readme walks you through adding it to Claude in about a minute.",
+  "body": "Setup takes about a minute: in Claude, open Customize, then Skills, click +, then Create skill, then Upload a skill, and pick the zip as it is. (Skills need code execution on, under Settings, then Capabilities.) Using Claude Code? Unzip it into ~/.claude/skills instead.",
   "download": "https://github.com/humzabuilds/claude-skills/releases/latest/download/video-editor.zip"
  },
  "rea": {
