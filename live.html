@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Live Build with Humza</title>
+<meta name="description" content="Thursday, December 10, 8 PM ET. I build a real Claude setup live, start to finish, step by step. Free.">
+<meta name="theme-color" content="#08080a">
+<meta property="og:title" content="Free Live Build: make Claude do real work">
+<meta property="og:image" content="avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08080a; --card:#121216; --card2:#17171c; --line:#26262e; --text:#f4f4f6; --dim:#9a9aa6;
+    --acc:#ff7a2f; --acc2:#ffb27a; --glow:rgba(255,122,47,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;min-height:100vh;overflow-x:hidden;
+    background-image:radial-gradient(900px 520px at 50% -140px,rgba(255,122,47,.20),transparent 70%),radial-gradient(600px 400px at 100% 100%,rgba(255,122,47,.06),transparent 70%)}
+  body:after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>")}
+  .wrap{max-width:460px;margin:0 auto;padding:44px 16px 56px}
+  .me{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .av{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid var(--acc);box-shadow:0 0 0 6px rgba(255,122,47,.12),0 0 40px var(--glow)}
+  .handle{margin-top:14px;font-weight:800;font-size:17px;letter-spacing:-.01em}
+  .handle span{color:var(--dim);font-weight:600}
+  h1{margin-top:22px;font-weight:900;font-size:40px;line-height:1.02;letter-spacing:-.035em}
+  .hl{display:inline-block;margin-top:8px;background:var(--acc);color:#fff;font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;
+    font-size:40px;letter-spacing:0;padding:0 14px 2px;border-radius:10px;box-shadow:0 10px 40px var(--glow)}
+  .sub{margin-top:16px;color:var(--dim);font-size:15.5px;line-height:1.5;font-weight:500;max-width:360px}
+  .sub em{font-family:"Instrument Serif",serif;font-style:italic;color:var(--acc2);font-size:18px}
+  .steps{margin-top:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 8px;text-align:center}
+  .step b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--acc);color:#fff;font-size:12px;font-weight:800}
+  .step p{margin-top:7px;font-size:12.5px;line-height:1.3;font-weight:600}
+  .label{margin:34px 0 12px;display:flex;justify-content:center}
+  .pill{background:var(--acc);color:#fff;font-weight:800;font-size:12.5px;padding:6px 12px;border-radius:7px;box-shadow:0 6px 22px var(--glow)}
+  .win{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .win:hover{border-color:rgba(255,122,47,.55);box-shadow:0 0 0 1px rgba(255,122,47,.25),0 14px 40px rgba(0,0,0,.5)}
+  .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+  .bar i{width:9px;height:9px;border-radius:50%;background:#3a3a44}
+  .bar i:nth-child(1){background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+  .bar span{margin-left:8px;font-size:11.5px;color:var(--dim);font-weight:600;font-family:ui-monospace,Menlo,monospace}
+  .body{padding:16px 16px 16px}
+  .name{font-weight:800;font-size:19px;letter-spacing:-.02em}
+  .name em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--acc);font-size:22px}
+  .desc{margin-top:6px;color:var(--dim);font-size:14.5px;line-height:1.45;font-weight:500}
+  .get{margin-top:14px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;border:0;cursor:pointer;
+    background:#fff;color:#0b0b0d;border-radius:12px;padding:13px 14px;font:800 15px Inter,sans-serif;letter-spacing:-.01em;transition:transform .12s ease}
+  .get:active{transform:scale(.98)}
+  .get .word{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;font-weight:700;background:#0b0b0d;color:var(--acc2);padding:5px 9px;border-radius:7px}
+  .foot{margin-top:30px;text-align:center;color:var(--dim);font-size:13px;line-height:1.55}
+  .foot a{color:var(--text);text-decoration:none;font-weight:700}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,calc(100% + 60px));opacity:0;visibility:hidden;background:#fff;color:#0b0b0d;padding:13px 16px;border-radius:12px;
+    font-weight:700;font-size:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);transition:transform .25s ease,opacity .25s ease;max-width:calc(100% - 32px);text-align:center;z-index:5}
+  .toast.on{transform:translate(-50%,0);opacity:1;visibility:visible}
+  .toast b{color:var(--acc)}
+  .newsbar{margin-top:22px;display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid rgba(255,122,47,.45);border-radius:14px;padding:13px 14px;color:var(--text);text-decoration:none;box-shadow:0 10px 30px rgba(255,122,47,.10)}
+  .newsbar .dot{flex:none;width:9px;height:9px;border-radius:50%;background:#28c840;box-shadow:0 0 10px rgba(40,200,64,.7)}
+  .newsbar b{display:block;font-weight:800;font-size:15px}
+  .newsbar small{display:block;margin-top:2px;color:var(--dim);font-size:12.5px;font-weight:600}
+  .newsbar .arr{margin-left:auto;color:var(--acc);font-weight:900;font-size:18px}
+  .tvbtn{margin-top:22px;display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#ff7a2f,#ff5a1f);border-radius:16px;padding:16px 16px;
+    box-shadow:0 14px 44px var(--glow),inset 0 1px 0 rgba(255,255,255,.25);transition:transform .12s ease}
+  .tvbtn:active{transform:scale(.98)}
+  .tvbtn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .tvbtn .ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:rgba(0,0,0,.22)}
+  .tvbtn .t{display:block;font-weight:900;font-size:18px;line-height:1.2;letter-spacing:-.02em}
+  .tvbtn .t em{font-style:normal;background:#0b0b0d;color:var(--acc2);font-size:12px;font-weight:800;padding:3px 7px;border-radius:6px;vertical-align:3px;margin-right:6px}
+  .tvbtn small{display:block;margin-top:4px;font-size:13px;font-weight:600;opacity:.9}
+  .tvbtn .arr{margin-left:auto;font-weight:900;font-size:22px}
+  .gate{margin-top:24px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid rgba(255,122,47,.45);border-radius:16px;padding:18px 16px;box-shadow:0 10px 30px rgba(255,122,47,.10)}
+  .gate h2{font-weight:900;font-size:21px;letter-spacing:-.02em}
+  .gate h2 em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;color:var(--acc);font-size:24px}
+  .gate .d{margin-top:6px;color:var(--dim);font-size:14px;line-height:1.45;font-weight:500}
+  .gate form{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .gate input[type=email]{width:100%;background:#0b0b0d;border:1px solid var(--line);border-radius:12px;padding:13px 14px;color:var(--text);font:600 16px Inter,sans-serif}
+  .gate input[aria-invalid=true]{border-color:#ff5f57}
+  .btn{width:100%;border:0;cursor:pointer;background:var(--acc);color:#fff;border-radius:12px;padding:13px 14px;font:800 15px Inter,sans-serif;box-shadow:0 10px 30px var(--glow)}
+  .btn:disabled{opacity:.6}
+  .consent{margin-top:8px;color:var(--dim);font-size:11.5px;line-height:1.45}
+  .consent a{color:var(--dim)}
+  .msg{margin-top:8px;font-size:13.5px;font-weight:600}.msg.err{color:#ff8a80}.msg.ok{color:#7ee08a}.msg a{color:var(--dim)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .open{display:none;margin-top:12px;background:#0b0b0d;border:1px solid var(--line);border-radius:12px;padding:14px;white-space:pre-wrap;word-break:break-word;font-size:14px;line-height:1.5;color:var(--text)}
+  .open a{color:var(--acc2)}
+  .open.on{display:block}
+  .row{display:flex;gap:8px;margin-top:10px}
+  .row a,.row button{flex:1;text-align:center;text-decoration:none;border:1px solid var(--line);background:var(--card2);color:var(--text);border-radius:10px;padding:10px;font:700 13.5px Inter,sans-serif;cursor:pointer}
+  .row a.dl{background:#fff;color:#0b0b0d;border-color:#fff}
+  .feat{border-color:rgba(255,122,47,.7)}
+  #feat{margin-top:14px}
+  .gate form[hidden]{display:none}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  .when{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .when div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 8px;text-align:center}
+  .when b{display:block;font-weight:900;font-size:17px;letter-spacing:-.02em}
+  .when small{display:block;margin-top:3px;color:var(--dim);font-size:12px;font-weight:600}
+  .what{margin-top:22px;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:16px;padding:16px}
+  .what h2{font-weight:900;font-size:19px;letter-spacing:-.02em}
+  .what ul{margin:10px 0 0 18px;color:var(--text);font-size:14.5px;line-height:1.5;font-weight:500}
+  .what li{margin-top:6px}
+  .what p{margin-top:10px;color:var(--dim);font-size:13.5px;line-height:1.45}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="me">
+    <img class="av" src="avatar.jpg" alt="Humza">
+    <div class="handle">@humzabuilds <span>live</span></div>
+    <h1>Free Live Build,<br><span class="hl">Claude at work</span></h1>
+    <p class="sub">I take one real task from the chat and build the Claude setup for it live, start to finish. <em>You watch every step.</em></p>
+  </section>
+
+  <div class="when">
+    <div><b>Thu Dec 10</b><small>2026</small></div>
+    <div><b>8 PM ET</b><small>5 PM PT</small></div>
+    <div><b>60 min</b><small>Free</small></div>
+  </div>
+
+  <section class="gate" aria-labelledby="gate-h">
+    <h2 id="gate-h">Save your <em>seat</em></h2>
+    <p class="d">It streams on YouTube Live. I'll email you the link, plus a reminder the week before and the day before.</p>
+    <form id="form" novalidate>
+      <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <label for="email" class="hp">Email address</label>
+      <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAFsGgmV4t2bcwE7I" data-size="flexible" data-theme="auto"></div>
+      <button class="btn" type="submit" id="go">Save my seat</button>
+    </form>
+    <p class="consent">By signing up you agree to get a confirm email, a welcome email, emails about this live build and my free Sunday skill. Unsubscribe any time with the link in every email. <a href="privacy.html">Privacy</a></p>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="what">
+    <h2>What you'll see</h2>
+    <ul>
+      <li>One real task, picked from the chat, built live with Claude.</li>
+      <li>Every prompt and every step on screen. No coding needed to follow.</li>
+      <li>Your questions answered as we go.</li>
+    </ul>
+    <p>At the end I'll share how to join my 3-week bootcamp if you want to go further. The build is free either way.</p>
+  </section>
+
+  <p class="foot"><a href="index.html">Free Claude skills</a><br><a href="https://instagram.com/humzabuilds">Follow @humzabuilds</a></p>
+</main>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+  // Dec 10 live build sign-up (C-0725). The worker records a registration for new and existing subscribers (never for one who unsubscribed).
+  const API = "https://humzabuilds-subscribe.bettermarketing.workers.dev";
+  const form = document.getElementById("form"), email = document.getElementById("email"),
+        go = document.getElementById("go"), msg = document.getElementById("msg"), consent = document.querySelector(".consent");
+  const RE = /^[^\s@<>()",;:]+@[^\s@<>()",;:]+\.[^\s@<>()",;:]{2,}$/;
+  function show(kind, html) { msg.className = "msg " + kind; msg.innerHTML = html; }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const v = email.value.trim();
+    if (!RE.test(v)) { email.setAttribute("aria-invalid", "true"); show("err", "That email doesn't look right. Check it and try again."); email.focus(); return; }
+    email.removeAttribute("aria-invalid");
+    const tok = (form.querySelector('[name="cf-turnstile-response"]') || {}).value || "";
+    if (!tok) { show("err", window.turnstile ? "One second, the quick human check is still loading. Try again." : "Something on your browser blocked the quick human check. Turn off the blocker for this page and try again."); return; }
+    go.disabled = true; go.textContent = "Saving..."; show("", "");
+    try {
+      const res = await fetch(API + "/subscribe", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: v, source: "live-dec10", website: form.website.value, turnstile: tok }) });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) { form.hidden = true; consent.hidden = true; show("ok", "Your seat is saved. If this is your first time, check your inbox and tap confirm so the YouTube Live link reaches " + v.replace(/[<>&"]/g, "") + "."); return; }
+      show("err", data.error === "invalid_email" ? "That email doesn't look right. Check it and try again." : data.error === "check_failed" ? "The quick human check didn't go through. Try again." : "Couldn't save that just now. Try again in a minute.");
+      try { window.turnstile && turnstile.reset(); } catch (e3) {}
+    } catch (err) { show("err", "Couldn't reach the server. Check your connection and try again."); try { window.turnstile && turnstile.reset(); } catch (e3) {} }
+    finally { go.disabled = false; go.textContent = "Save my seat"; }
+  });
+</script>
+</body>
+</html>

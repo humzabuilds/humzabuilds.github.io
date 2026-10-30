@@ -180,15 +180,17 @@ Rules:
       <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
       <label for="email" class="hp">Email address</label>
       <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAFsGgmV4t2bcwE7I" data-size="flexible" data-theme="auto"></div>
       <button class="btn" type="submit" id="go">Send me the next one</button>
     </form>
-    <p class="consent">By signing up you agree to get one email when a new free guide drops. Unsubscribe any time with the link in every email. <a href="privacy.html">Privacy</a></p>
+    <p class="consent">By signing up you agree to get a confirm email, a welcome email and my free Sunday skill. Unsubscribe any time with the link in every email. <a href="privacy.html">Privacy</a></p>
     <p class="msg" id="msg" role="status" aria-live="polite"></p>
   </section>
 
   <p class="foot"><a href="index.html">More free Claude skills</a><br><a href="https://instagram.com/humzabuilds">Follow @humzabuilds</a></p>
 </main>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
   const API = "https://humzabuilds-subscribe.bettermarketing.workers.dev";
 
@@ -217,23 +219,26 @@ Rules:
     const v = email.value.trim();
     if (!RE.test(v)) { email.setAttribute("aria-invalid", "true"); show("err", "That email doesn't look right. Check it and try again."); email.focus(); return; }
     email.removeAttribute("aria-invalid");
+    const tok = (form.querySelector('[name="cf-turnstile-response"]') || {}).value || "";
+    if (!tok) { show("err", window.turnstile ? "One second, the quick human check is still loading. Try again." : "Something on your browser blocked the quick human check. Turn off the blocker for this page and try again."); return; }
     go.disabled = true; go.textContent = "Adding you..."; show("", "");
     try {
       const res = await fetch(API + "/subscribe", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: v, source: "tv", website: form.website.value })
+        body: JSON.stringify({ email: v, source: "tv", website: form.website.value, turnstile: tok })
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
         form.hidden = true;
-        show("ok", "You're in. The next free guide comes to " + v.replace(/[<>&"]/g, "") + "." +
-          (data.unsubscribe ? ' <a href="' + data.unsubscribe + '">Changed your mind? Unsubscribe</a>' : ""));
+        show("ok", "You're in. If this is your first time, check your inbox and tap confirm so the next free guide reaches " + v.replace(/[<>&"]/g, "") + ".");
         return;
       }
       if (data.error === "invalid_email") { email.setAttribute("aria-invalid", "true"); show("err", "That email doesn't look right. Check it and try again."); }
-      else show("err", "Couldn't save that just now. Try again in a minute.");
+      else show("err", data.error === "check_failed" ? "The quick human check didn't go through. Try again." : "Couldn't save that just now. Try again in a minute.");
+      try { window.turnstile && turnstile.reset(); } catch (e3) {}
     } catch (err) {
       show("err", "Couldn't reach the server. Check your connection and try again.");
+      try { window.turnstile && turnstile.reset(); } catch (e3) {}
     } finally {
       go.disabled = false; go.textContent = "Send me the next one";
     }

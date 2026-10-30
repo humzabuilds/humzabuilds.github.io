@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Confirm your email</title><style>
+:root{--bg:#08080a;--card:#121216;--text:#f4f4f6;--dim:#a4a4ae;--acc:#ff7a2f;--line:#26262e;--ok:#28c840;--bad:#ff6b6b}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font:500 15.5px/1.6 Inter,system-ui,-apple-system,sans-serif}
+main{max-width:520px;margin:0 auto;padding:48px 16px 64px}h1{font-size:30px;font-weight:900;letter-spacing:-.03em}
+p{margin-top:10px;color:var(--dim)}a{color:var(--acc)}
+button{margin-top:18px;border:0;cursor:pointer;background:var(--acc);color:#fff;border-radius:12px;padding:13px 18px;font:800 15px Inter,system-ui,sans-serif}
+button[disabled]{opacity:.6;cursor:progress}button[hidden]{display:none}button:focus-visible{outline:2px solid #ffb27a;outline-offset:2px}
+.msg{font-weight:700}.ok{color:var(--ok)}.err{color:var(--bad)}
+</style></head><body><main>
+<h1>Confirm your email</h1>
+<p id="lead">One tap and the free Sunday skill starts coming to your inbox, plus the live build link if you saved a seat.</p>
+<button id="go" type="button">Confirm my email</button>
+<p class="msg" id="msg" role="status" aria-live="polite"></p>
+<p style="margin-top:32px">Didn't sign up? Close this page. Nothing else gets sent unless you confirm.</p>
+<p><a href="index.html">Back to the free skills</a></p>
+</main>
+<script>
+const API = "https://humzabuilds-subscribe.bettermarketing.workers.dev";
+const c = new URLSearchParams(location.search).get("c") || "";
+const go = document.getElementById("go"), msg = document.getElementById("msg");
+function show(k, s){ msg.className = "msg " + k; msg.textContent = s; }
+// A button, not an automatic call on load: link scanners in some inboxes open links, and a click proves a person.
+if (!/^[a-f0-9]{32}$/.test(c)) { go.hidden = true; show("err", "This link is missing its code. Use the link from your email."); }
+go.addEventListener("click", async () => {
+  go.disabled = true; go.textContent = "Confirming...";
+  try {
+    const r = await fetch(API + "/confirm", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ c }) });
+    const d = await r.json().catch(() => ({}));
+    if (r.ok && d.ok && d.confirmed) { go.hidden = true; show("ok", "Confirmed. Your welcome email is on its way, and the next skill comes Sunday."); return; }
+    if (r.ok && d.ok) { go.hidden = true; show("err", "This email was unsubscribed, so nothing will be sent."); return; }
+    show("err", r.status === 404 ? "We couldn't find that sign-up. Sign up again on the main page." : "Something went wrong. Try again in a minute.");
+  } catch (e) { show("err", "Couldn't reach the server. Try again in a minute."); }
+  go.disabled = false; go.textContent = "Confirm my email";
+});
+</script></body></html>
