@@ -178,5 +178,90 @@
   "name": "read-only hotel room check prompt",
   "body": "Here's my read-only version of the prompt 👇 Paste it into Claude Code on the Wi-Fi the room gave you:\n\n\"You are a read-only check-in safety assistant on the Wi-Fi this room gave me. Explain each command in one line and ask before running it. 1) List devices on this network (arp-scan or nmap -sn only, no port attacks, no logins, never open a video stream). Show device names and MAC addresses masked unless the vendor is a camera maker, and flag any camera brands. 2) Run a 30 second Bluetooth scan every 2 minutes for 10 minutes and flag AirTag, Tile or SmartTag signals. 3) Walk me through a flashlight sweep of mirrors, vents and anything pointed at the bed or shower. 4) Give me a ranked table and next steps. Remind me a clean result is not proof.\"\n\nGood to know:\n1. Some hotels ban network scans in their Wi-Fi rules. If you're unsure, or staff object, skip step 1 and do the Bluetooth and flashlight checks.\n2. A clean result isn't proof. Still check the room with your own eyes.\n\nMore free ones here: https://humzabuilds.github.io",
   "download": ""
+ },
+ "unslop": {
+  "name": "unslop design skill",
+  "body": "Here you go 👇\n\nhttps://github.com/heydamir/unslop\n\nIt's free, made by Damir Sokolovsky. Install it into Claude Code, then type /unslop with your page or your site's link. It shows you the plan before it changes anything.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "founder": {
+  "name": "Founder business-test skills",
+  "body": "Here you go 👇\n\nhttps://github.com/Jakeschincariol/founder-skill\n\nIt's free. In Claude Code:\n/plugin marketplace add Jakeschincariol/founder-skill\n/plugin install founder-skill@founder-skill\n\nStart with the consumer panel and describe your idea and who it's for.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "earshot": {
+  "name": "Earshot sound tool",
+  "body": "Here you go 👇\n\nhttps://github.com/Leonxlnx/earshot\n\nIt's free and open source, by Leon Lin. Paste the link into Claude Code and ask it to install Earshot and add sound to your edit.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "opuscar": {
+  "name": "Lemo Opuscar film styles",
+  "body": "Here you go 👇\n\nhttps://github.com/lemomo-ai/lemo-opuscar\n\nIt's free. Paste the link into Claude Code, ask it to install the styles, then pick one and tell it what your video is about.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "pentagi": {
+  "name": "PentAGI security tester",
+  "body": "Here you go 👇\n\nhttps://github.com/vxcontrol/pentagi\n\nIt's free and open source (MIT). It runs in Docker on your own machine. Only point it at apps and sites you own.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "ltx": {
+  "name": "LTX 2.5 video model",
+  "body": "Here you go 👇\n\nhttps://huggingface.co/Lightricks/LTX-2.5\n\nCode and setup: https://github.com/Lightricks/LTX-2\n\nIt needs an NVIDIA graphics card or a rented cloud GPU. Check the community license before commercial use.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1106-everything": {
+  "name": "safe device hack check prompt",
+  "body": "Here you go 👇 Open Claude Code and paste:\n\nMy device is a [brand and exact model number]. Tell me what people have safely changed or unlocked on this exact model, what each change does, and the risk of breaking it. Do not connect to it or change anything yet.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1106-adobe": {
+  "name": "free app swap prompt",
+  "body": "Here you go 👇 Open Claude Code and paste:\n\nHere is every app and subscription I pay for each month: [list with prices]. For each one, find a free or open source app that does the same job, show the link, and tell me exactly what I would lose by switching. Do not cancel or install anything.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1106-scamads": {
+  "name": "store scam check prompt",
+  "body": "Here you go 👇 Copy the store link, open Claude Code and paste:\n\nCheck this store before I buy: [link]. Tell me how old the domain is, what people say about it on Reddit, Trustpilot and the BBB, whether it has a real return policy, phone number and street address, and whether the exact product or its photos appear on other sites for less. Give me a verdict: buy, careful, or skip. Do not buy or enter anything.\n\nIf you already got scammed: ReportFraud.ftc.gov and call your card company.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1106-oldtv": {
+  "name": "old Android TV detox prompt",
+  "body": "Here you go 👇 Free prompt by Ansub Khan: https://github.com/Ansub/tv-detox\n\nYou need an Android TV or Google TV, Claude Code, and your computer on the same Wi-Fi. On the TV: Settings, About, click Build 7 times, then turn on debugging in Developer options. Nothing gets deleted and every change can be undone.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1107-job": {
+  "name": "job interview practice",
+  "body": "Here's the prompt 👇 Paste it into Claude:\n\nHere is a job post: [paste] and my resume: [paste]. 1) List what an automated screener would check first and what it cannot find on my resume. Only suggest changes that are true. 2) Interview me for this role one question at a time, the way this company would. After each answer, grade it 1 to 10 and show a stronger version in my own words. 3) Search for what candidates say they were asked at this company and add those questions.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1107-home": {
+  "name": "tablet home screen",
+  "body": "Here's the prompt 👇 Paste it into Claude Code:\n\nBuild me a home screen for my old iPad. Show today's calendar, the weather, and our family to-do list, in big text I can read from across the room. Serve it on my Wi-Fi and give me the link to open on the iPad.\n\nThen on the iPad: open the link, Share > Add to Home Screen, and set Settings > Display & Brightness > Auto-Lock to Never.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1107-car": {
+  "name": "car deal check",
+  "body": "Here's the prompt 👇 Paste it into Claude with a photo of your deal sheet:\n\nHere is my car deal sheet. List every fee, add-on and product with its price, mark which are optional and which are required by law in my state ([state]), work out the total I will pay over the whole loan at this rate and term, and tell me what a typical bank or credit union rate would change. Plain English, no advice to sign or not sign.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1107-setup": {
+  "name": "Claude Code first setup",
+  "body": "Here's the prompt 👇 Paste it into Claude Code:\n\nSet up a CLAUDE.md, a context folder, a memory.md and a skills folder for me. Interview me first, one question at a time.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1107-listen": {
+  "name": "iPhone listening",
+  "body": "Here's the prompt 👇 Screenshot your Siri page and your Privacy & Security page, give them to Claude, and paste:\n\nWhich of these settings let my iPhone listen to me or share what I say? Go line by line: what each one does, and whether I should turn it off. Keep anything I need for calls and texts.\n\nThen turn on Settings > Privacy & Security > App Privacy Report. In a week, screenshot it and ask Claude: which apps used my microphone, and when?\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1107-free": {
+  "name": "Claude Code for free",
+  "body": "Here's the setup 👇\n1. Install Ollama from ollama.com\n2. Pull one of the free coding models it lists (pick one your computer's memory can run)\n3. Start Claude Code pointed at Ollama instead of the paid model, using the command on ollama.com's Claude Code page\n\nThe free model is weaker than the real Claude, so use it for small, boring jobs.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
+ },
+ "h1107-brain": {
+  "name": "AI assistant",
+  "body": "Here's the starter kit 👇 Drop the folder into your project and start Claude Code. It interviews you first, then fills in who you are, your rules and its memory.\n\nMore free ones here: https://humzabuilds.github.io",
+  "download": ""
  }
 }
