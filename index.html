@@ -142,8 +142,7 @@
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
   let tsFailed = false; window.hbTsFail = () => { tsFailed = true; };
-  // C-0724 (2026-10-29): one email unlocks every skill on this page. skills.json is built from the DM bot's
-  // messages.json (build_skills_json.py), and the DM links here as ?s=<key> so that skill shows first.
+  // One email unlocks every skill on this page. A link with ?s=<key> shows that skill first.
   const API = "https://humzabuilds-subscribe.bettermarketing.workers.dev";
   const LIST = [
     {key:"rea", file:"reverse-engineer.md", name:'Reverse Engineer <em>Anything</em>', desc:"Pick one feature of an app you like and rebuild your own version of it. The real repo plus the exact prompt I used."},
